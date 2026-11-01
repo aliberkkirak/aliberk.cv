@@ -415,3 +415,15 @@ p { color: var(--ink2); }
 .durum { justify-self: start; margin-top: 4px; font: 600 12px var(--serif-caps); font-style: normal; letter-spacing: .18em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
 .durum.devam { color: var(--bone); background: var(--ink); }
 .durum.hedef { color: var(--ink2); border: 1px dashed rgba(29, 26, 23, .45); }
+
+/* Çevirme ipucu: öne çıkan */
+.ipucu {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 26px; padding: 10px 18px;
+  font: 600 13.5px var(--serif-caps); letter-spacing: .22em; text-transform: uppercase;
+  color: var(--koyu-yazi); border: 1px solid rgba(228, 221, 205, .35); border-radius: 999px;
+  background: rgba(228, 221, 205, .06); animation: ipucu 2.8s ease-in-out infinite;
+}
+.ipucu svg { width: 17px; height: 17px; animation: don-ok 2.8s var(--ease) infinite; }
+@keyframes ipucu { 50% { border-color: rgba(228, 221, 205, .7); background: rgba(228, 221, 205, .12); } }
+@keyframes don-ok { 0%, 40% { transform: rotate(0); } 70%, 100% { transform: rotate(180deg); } }
+.ipucu { white-space: nowrap; font-size: clamp(11.5px, 3.4vw, 13.5px); letter-spacing: clamp(.12em, .6vw, .22em); cursor: pointer; }

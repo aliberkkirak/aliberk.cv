@@ -147,6 +147,7 @@
       $(".arka-yuz").setAttribute("aria-hidden", String(acik));
     };
     kart.addEventListener("click", function (e) { if (!e.target.closest("a")) cevir(); });
+    var ip = $(".ipucu"); if (ip) ip.addEventListener("click", cevir);
     kart.addEventListener("keydown", function (e) {
       if ((e.key === "Enter" || e.key === " ") && !e.target.closest("a")) { e.preventDefault(); cevir(); }
     });
