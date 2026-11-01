@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ali Berk Kırak · Veri Analizi</title>
 <meta name="description" content="Ali Berk Kırak: işletme öğrencisi, veri analizi (Excel, Power BI, SQL). Özgeçmiş ve projeler.">
-<meta name="theme-color" content="#f3f0ea" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0e14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#121110">
 <link rel="canonical" href="https://aliberk.cv/">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -29,11 +28,12 @@
     d.setAttribute("data-lang", l); d.lang = l; d.classList.add("js");
   })();
 </script>
+<link rel="preload" href="assets/fonts/CormorantSC-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <!-- İÇERİK TEMSİLİ: CV bilgileri birlikte yazılınca güncellenecek. -->
-<div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
 <a class="skip" href="#main"><span data-l="tr">İçeriğe geç</span><span data-l="en">Skip to content</span></a>
 
 <header class="top">
@@ -47,82 +47,84 @@
 
 <main id="main" class="wrap">
 
-  <!-- Kartvizit -->
-  <section class="card hero r" aria-labelledby="ad">
-    <div class="cover" aria-hidden="true">
-      <div class="cover-grid"></div>
-      <svg class="cover-line" viewBox="0 0 400 100" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="cl" x1="0" x2="1"><stop offset="0" stop-color="#7fd3e0" stop-opacity=".1"/><stop offset=".6" stop-color="#7fd3e0"/><stop offset="1" stop-color="#e6c48a"/></linearGradient>
-          <linearGradient id="ca" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd3e0" stop-opacity=".22"/><stop offset="1" stop-color="#7fd3e0" stop-opacity="0"/></linearGradient>
-        </defs>
-        <polygon class="cover-area" fill="url(#ca)" points="0,100 0,90 12,75 24,67 36,65 48,47 61,56 73,54 85,75 97,76 109,78 121,86 133,79 145,74 158,74 170,77 182,38 194,46 206,65 218,45 230,44 242,50 255,89 267,67 279,84 291,71 303,66 315,54 327,40 339,38 352,20 364,25 376,55 388,42 400,90 400,100"/>
-        <polyline class="cover-path" pathLength="1" fill="none" stroke="url(#cl)" stroke-width="1.6" vector-effect="non-scaling-stroke" points="0,90 12,75 24,67 36,65 48,47 61,56 73,54 85,75 97,76 109,78 121,86 133,79 145,74 158,74 170,77 182,38 194,46 206,65 218,45 230,44 242,50 255,89 267,67 279,84 291,71 303,66 315,54 327,40 339,38 352,20 364,25 376,55 388,42 400,90"/>
-      </svg>
-      <span class="cover-dot"></span>
-      <span class="cover-tag">Excel · Power BI · SQL</span>
+  <!-- Kartvizit: dokununca döner -->
+  <section class="sahne" aria-labelledby="ad">
+    <div class="kart-kutu">
+      <button class="kart" type="button" id="kart" aria-pressed="false">
+        <span class="sr"><span data-l="tr">Kartı çevir</span><span data-l="en">Flip the card</span></span>
+        <span class="yuz on-yuz kagit bone" aria-hidden="false">
+          <span class="k-ust-sol">aliberk.cv</span>
+          <span class="k-ust-sag"><span data-l="tr">Türkiye</span><span data-l="en">Türkiye</span></span>
+          <span class="k-firma">
+            <span class="k-firma-ad"><span data-l="tr">Veri Analizi</span><span data-l="en">Data Analysis</span></span>
+            <span class="k-firma-alt">Excel · Power BI · SQL</span>
+          </span>
+          <span class="k-kisi">
+            <strong id="ad">Ali Berk Kırak</strong>
+            <span><span data-l="tr">İşletme Öğrencisi</span><span data-l="en">Business Student</span></span>
+          </span>
+          <span class="k-alt">iletisim@aliberk.cv &nbsp;·&nbsp; github.com/aliberkkirak</span>
+        </span>
+        <span class="yuz arka-yuz kagit bone" aria-hidden="true">
+          <span class="filigran">ABK</span>
+          <span class="arka-yazi"><span data-l="tr">Dağınık veriden, net karara.</span><span data-l="en">From messy data to clear decisions.</span></span>
+        </span>
+      </button>
     </div>
+    <p class="stok"><span data-l="tr">Kemik beyazı · kabartma harf</span><span data-l="en">Bone · raised lettering</span></p>
+    <p class="ipucu"><span data-l="tr">Çevirmek için karta dokun</span><span data-l="en">Tap the card to flip it</span></p>
+  </section>
 
-    <div class="hero-body">
-      <div class="avatar" aria-hidden="true"><span>ABK</span></div>
-      <h1 id="ad">Ali Berk <em>Kırak</em></h1>
-      <p class="role">
-        <span data-l="tr">İşletme Öğrencisi · Veri Analizi</span>
-        <span data-l="en">Business Student · Data Analysis</span>
-      </p>
-      <div class="orn" aria-hidden="true"><i></i><b>◆</b><i></i></div>
-
-      <p class="lead">
-        <span data-l="tr">Dağınık veriyi temizleyip modelleyen, ondan karar verdiren raporlar kuran bir analist olma yolundayım. Excel, Power BI ve SQL ile gerçekçi senaryolar üzerinde projeler geliştiriyorum.</span>
-        <span data-l="en">I am on my way to becoming an analyst who cleans and models messy data and builds reports that drive decisions. I develop projects on realistic scenarios with Excel, Power BI and SQL.</span>
-      </p>
-
-      <ul class="meta">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Türkiye</li>
-        <li class="status"><i aria-hidden="true"></i><span data-l="tr">Staj fırsatlarına açık</span><span data-l="en">Open to internships</span></li>
-      </ul>
-
-      <nav class="actions" aria-label="İletişim">
-        <a class="btn primary" href="mailto:iletisim@aliberk.cv">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
-          <span data-l="tr">E-posta</span><span data-l="en">Email</span>
-        </a>
-        <a class="btn" href="#" data-todo="linkedin" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3.5"/><path d="M8 10.5V17M8 7.5v.01M12 17v-3.6c0-1.7 1-2.9 2.4-2.9S16.5 11.6 16.5 13.3V17M12 10.5V17"/></svg>
-          LinkedIn
-        </a>
-        <a class="btn" href="https://github.com/aliberkkirak" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.5 5.5l-3 13"/></svg>
-          GitHub
-        </a>
-        <a class="btn" href="assets/Ali-Berk-Kirak-CV.pdf" data-todo="cv">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 11v6M9.5 14.5 12 17l2.5-2.5"/></svg>
-          CV (PDF)
-        </a>
-      </nav>
-
-      <div class="sub-actions">
-        <a class="link" href="assets/ali-berk-kirak.vcf" download>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 19.5c.8-3.3 3.4-5 6.5-5s5.7 1.7 6.5 5M19 8v6M16 11h6"/></svg>
-          <span data-l="tr">Rehbere ekle</span><span data-l="en">Save contact</span>
-        </a>
-        <button class="link" type="button" id="paylas">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3.5M8 7.5l4-4 4 4M5 12v6.5A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V12"/></svg>
-          <span data-l="tr">Paylaş</span><span data-l="en">Share</span>
-        </button>
-      </div>
+  <!-- Tanıtım ve iletişim -->
+  <section class="card kagit eggshell r" aria-label="Tanıtım">
+    <h2><span data-l="tr">Hakkımda</span><span data-l="en">About</span></h2>
+    <p class="lead">
+      <span data-l="tr">Dağınık veriyi temizleyip modelleyen, ondan karar verdiren raporlar kuran bir analist olma yolundayım. Excel, Power BI ve SQL ile gerçekçi senaryolar üzerinde projeler geliştiriyorum.</span>
+      <span data-l="en">I am on my way to becoming an analyst who cleans and models messy data and builds reports that drive decisions. I develop projects on realistic scenarios with Excel, Power BI and SQL.</span>
+    </p>
+    <ul class="meta">
+      <li class="status"><i aria-hidden="true"></i><span data-l="tr">Staj fırsatlarına açık</span><span data-l="en">Open to internships</span></li>
+    </ul>
+    <nav class="actions" aria-label="İletişim">
+      <a class="btn primary" href="mailto:iletisim@aliberk.cv">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+        <span data-l="tr">E-posta</span><span data-l="en">Email</span>
+      </a>
+      <a class="btn" href="#" data-todo="linkedin" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3.5"/><path d="M8 10.5V17M8 7.5v.01M12 17v-3.6c0-1.7 1-2.9 2.4-2.9S16.5 11.6 16.5 13.3V17M12 10.5V17"/></svg>
+        <span lang="en">LinkedIn</span>
+      </a>
+      <a class="btn" href="https://github.com/aliberkkirak" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.5 5.5l-3 13"/></svg>
+        <span lang="en">GitHub</span>
+      </a>
+      <a class="btn" href="assets/Ali-Berk-Kirak-CV.pdf" data-todo="cv">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M12 11v6M9.5 14.5 12 17l2.5-2.5"/></svg>
+        <span data-l="tr">Özgeçmiş</span><span data-l="en">Résumé</span>
+      </a>
+    </nav>
+    <div class="sub-actions">
+      <a class="link" href="assets/ali-berk-kirak.vcf" download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 19.5c.8-3.3 3.4-5 6.5-5s5.7 1.7 6.5 5M19 8v6M16 11h6"/></svg>
+        <span data-l="tr">Rehbere ekle</span><span data-l="en">Save contact</span>
+      </a>
+      <button class="link" type="button" id="paylas">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3.5M8 7.5l4-4 4 4M5 12v6.5A2.5 2.5 0 0 0 7.5 21h9a2.5 2.5 0 0 0 2.5-2.5V12"/></svg>
+        <span data-l="tr">Paylaş</span><span data-l="en">Share</span>
+      </button>
     </div>
+    <span class="stok-ic"><span data-l="tr">Yumurta kabuğu</span><span data-l="en">Eggshell</span></span>
   </section>
 
   <!-- Rakamlar -->
   <section class="stats r" aria-label="Özet">
-    <div class="stat"><strong><span class="say" data-hedef="318">318</span><small> Mn ₺</small></strong><span data-l="tr">analiz edilen ciro</span><span data-l="en">revenue analysed</span></div>
-    <div class="stat"><strong><span class="say" data-hedef="11906">11.906</span></strong><span data-l="tr">satır veri</span><span data-l="en">rows of data</span></div>
-    <div class="stat"><strong><span class="say" data-hedef="4">4</span></strong><span data-l="tr">proje</span><span data-l="en">projects</span></div>
+    <div class="stat kagit nimbus"><strong><span class="say" data-hedef="318">318</span><small> Mn ₺</small></strong><span data-l="tr">analiz edilen ciro</span><span data-l="en">revenue analysed</span></div>
+    <div class="stat kagit nimbus"><strong><span class="say" data-hedef="11906">11.906</span></strong><span data-l="tr">satır veri</span><span data-l="en">rows of data</span></div>
+    <div class="stat kagit nimbus"><strong><span class="say" data-hedef="4">4</span></strong><span data-l="tr">proje</span><span data-l="en">projects</span></div>
   </section>
 
   <!-- Projeler -->
-  <section class="card r" aria-labelledby="h-proje" id="projeler">
+  <section class="card kagit ivory r" aria-labelledby="h-proje" id="projeler">
     <h2 id="h-proje"><span data-l="tr">Projeler</span><span data-l="en">Projects</span></h2>
     <div class="projects" id="carousel">
       <article class="project">
@@ -131,7 +133,7 @@
           <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
         </button>
         <div class="p-body">
-          <span class="tag pbi">Power BI</span>
+          <span class="tag">Power BI</span>
           <h3><span data-l="tr">Satış Performans Paneli</span><span data-l="en">Sales Performance Dashboard</span></h3>
           <p><span data-l="tr">Üç yıllık satış verisinden ciro, kâr ve bölge performansı. Yıllar aynı dönemle karşılaştırılıyor.</span><span data-l="en">Revenue, profit and regional performance from three years of sales, compared on a like-for-like period.</span></p>
           <ul class="uses"><li>Power Query</li><li><span data-l="tr">Yıldız şema</span><span data-l="en">Star schema</span></li><li>DAX</li></ul>
@@ -143,7 +145,7 @@
           <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
         </button>
         <div class="p-body">
-          <span class="tag pbi">Power BI</span>
+          <span class="tag">Power BI</span>
           <h3><span data-l="tr">İade Analizi</span><span data-l="en">Returns Analysis</span></h3>
           <p><span data-l="tr">Hangi bölge ve ürün daha çok geri dönüyor? Bölge × yıl ısı tablosu ve aylık iade trendi.</span><span data-l="en">Which regions and products come back most? A region × year heat table and the monthly returns trend.</span></p>
           <ul class="uses"><li>DAX</li><li><span data-l="tr">Koşullu biçim</span><span data-l="en">Conditional formatting</span></li><li>KPI</li></ul>
@@ -155,7 +157,7 @@
           <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
         </button>
         <div class="p-body">
-          <span class="tag sql">SQL</span>
+          <span class="tag">SQL</span>
           <h3><span data-l="tr">Müşteri Değer Analizi</span><span data-l="en">Customer Value Analysis</span></h3>
           <p><span data-l="tr">SQL Server'da dört tabloyu birleştirip en çok ciro getiren müşterileri bulan sorgu.</span><span data-l="en">A SQL Server query joining four tables to find the customers that bring in the most revenue.</span></p>
           <ul class="uses"><li>JOIN</li><li>GROUP BY</li><li><span data-l="tr">Toplama fonksiyonları</span><span data-l="en">Aggregates</span></li></ul>
@@ -167,7 +169,7 @@
           <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
         </button>
         <div class="p-body">
-          <span class="tag xl">Excel</span>
+          <span class="tag">Excel</span>
           <h3><span data-l="tr">Bütçe ve Gerçekleşen</span><span data-l="en">Budget vs Actual</span></h3>
           <p><span data-l="tr">Geçen yıldan bütçe kuran, gerçekleşeni ay ay karşılaştıran ve sapmayı gösteren model.</span><span data-l="en">A model that builds the budget from last year, compares actuals month by month and shows the variance.</span></p>
           <ul class="uses"><li><span data-l="tr">Formüller</span><span data-l="en">Formulas</span></li><li><span data-l="tr">Senaryo</span><span data-l="en">Scenarios</span></li><li><span data-l="tr">Grafik</span><span data-l="en">Charts</span></li></ul>
@@ -179,10 +181,11 @@
       <span data-l="tr">Kırak Metal kurgusal bir imalat şirketidir; veriler eğitim amacıyla üretilmiştir.</span>
       <span data-l="en">Kırak Metal is a fictional manufacturer; the data was generated for training.</span>
     </p>
+    <span class="stok-ic"><span data-l="tr">Fildişi</span><span data-l="en">Ivory</span></span>
   </section>
 
   <!-- Yol haritası -->
-  <section class="card r" aria-labelledby="h-yol">
+  <section class="card kagit nimbus r" aria-labelledby="h-yol">
     <h2 id="h-yol"><span data-l="tr">Yol Haritası</span><span data-l="en">Roadmap</span></h2>
     <ol class="road">
       <li class="done"><b>Excel</b><span data-l="tr">Temeller, formüller, pivot tablolar</span><span data-l="en">Basics, formulas, pivot tables</span></li>
@@ -195,10 +198,11 @@
       <li><b>Excel</b><span data-l="tr">İleri seviye ve modelleme</span><span data-l="en">Advanced use and modelling</span></li>
       <li class="goal"><b><span data-l="tr">Hedef</span><span data-l="en">Goal</span></b><span data-l="tr">Veri Analisti</span><span data-l="en">Data Analyst</span></li>
     </ol>
+    <span class="stok-ic"><span data-l="tr">Soluk bulut beyazı</span><span data-l="en">Pale nimbus white</span></span>
   </section>
 
   <!-- Yetkinlikler -->
-  <section class="card r" aria-labelledby="h-yetkinlik">
+  <section class="card kagit eggshell r" aria-labelledby="h-yetkinlik">
     <h2 id="h-yetkinlik"><span data-l="tr">Yetkinlikler</span><span data-l="en">Skills</span></h2>
     <div class="skills">
       <div class="skill">
@@ -224,10 +228,11 @@
       <li><span data-l="tr">Türkçe (ana dil)</span><span data-l="en">Turkish (native)</span></li>
       <li><span data-l="tr">İngilizce</span><span data-l="en">English</span></li>
     </ul>
+    <span class="stok-ic"><span data-l="tr">Yumurta kabuğu</span><span data-l="en">Eggshell</span></span>
   </section>
 
   <!-- Eğitim -->
-  <section class="card r" aria-labelledby="h-egitim">
+  <section class="card kagit bone r" aria-labelledby="h-egitim">
     <h2 id="h-egitim"><span data-l="tr">Eğitim</span><span data-l="en">Education</span></h2>
     <ol class="timeline">
       <li>
@@ -241,10 +246,10 @@
         <span class="muted">Udemy</span>
       </li>
     </ol>
+    <span class="stok-ic"><span data-l="tr">Kemik beyazı</span><span data-l="en">Bone</span></span>
   </section>
 
   <footer class="foot r">
-    <div class="orn" aria-hidden="true"><i></i><b>◆</b><i></i></div>
     <p>© <span id="yil">2026</span> Ali Berk Kırak · aliberk.cv</p>
   </footer>
 </main>

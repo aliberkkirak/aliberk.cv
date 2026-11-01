@@ -137,5 +137,40 @@
     sx = null;
   }, { passive: true });
 
+  /* Kartvizit: dokununca döner, eğilince ışık kayar */
+  var kart = $("#kart"), kutu = $(".kart-kutu");
+  if (kart) {
+    kart.addEventListener("click", function () {
+      var acik = kart.getAttribute("aria-pressed") === "true";
+      kart.setAttribute("aria-pressed", String(!acik));
+      $(".on-yuz").setAttribute("aria-hidden", String(!acik));
+      $(".arka-yuz").setAttribute("aria-hidden", String(acik));
+    });
+    var egil = function (x, y) { // x, y: -1..1
+      kutu.style.setProperty("--ry", (x * 9).toFixed(2) + "deg");
+      kutu.style.setProperty("--rx", (-y * 7).toFixed(2) + "deg");
+      kart.style.setProperty("--isik", (-30 + (x + 1) * 40).toFixed(1) + "%");
+    };
+    if (!azHareket) {
+      kutu.addEventListener("pointermove", function (e) {
+        if (e.pointerType !== "mouse") return;
+        var r = kutu.getBoundingClientRect();
+        egil((e.clientX - r.left) / r.width * 2 - 1, (e.clientY - r.top) / r.height * 2 - 1);
+      });
+      kutu.addEventListener("pointerleave", function () { egil(0, 0); kart.style.removeProperty("--isik"); });
+      /* Telefonda (izin istemeyen tarayıcılarda) cihaz eğildikçe kart da eğilir */
+      if (window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission !== "function") {
+        var ilk = null;
+        window.addEventListener("deviceorientation", function (e) {
+          if (e.beta == null) return;
+          if (!ilk) ilk = { b: e.beta, g: e.gamma };
+          var x = Math.max(-1, Math.min(1, (e.gamma - ilk.g) / 25));
+          var y = Math.max(-1, Math.min(1, (e.beta - ilk.b) / 25));
+          egil(x, y);
+        }, { passive: true });
+      }
+    }
+  }
+
   $("#yil").textContent = new Date().getFullYear();
 })();
