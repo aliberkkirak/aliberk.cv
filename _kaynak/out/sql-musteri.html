@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box} html,body{margin:0;width:1280px;height:720px;overflow:hidden}
+body{font-family:"Segoe UI",system-ui,sans-serif;color:#1b1b1b;-webkit-font-smoothing:antialiased}
+svg text{font-family:"Segoe UI",system-ui,sans-serif}
+
+body{background:#eef0f4;font-size:13px}
+.top{height:30px;background:#2d3a52;color:#e7ebf3;display:flex;align-items:center;gap:16px;padding:0 12px;font-size:12px}
+.top b{font-weight:600}
+.tool{height:34px;background:#f5f6f9;border-bottom:1px solid #d5d9e2;display:flex;align-items:center;gap:10px;padding:0 10px;font-size:12px}
+.tool .run{background:#fff;border:1px solid #c9cfda;border-radius:3px;padding:3px 10px;color:#1e7e34;font-weight:600}
+.tool .db{background:#fff;border:1px solid #c9cfda;padding:3px 10px;border-radius:3px}
+.main{display:flex;height:656px}
+.oe{width:230px;background:#fff;border-right:1px solid #d5d9e2;font-size:12px;line-height:22px;padding:6px 8px;color:#222}
+.oe h4{margin:0 0 4px;font-size:11.5px;color:#555;font-weight:600;border-bottom:1px solid #e3e6ec;padding-bottom:4px}
+.ed{flex:1;display:flex;flex-direction:column;min-width:0}
+.tab{height:28px;background:#e6e9ef;display:flex;align-items:flex-end;padding-left:6px}
+.tab span{background:#fff;padding:5px 14px;font-size:12px;border-top:2px solid #f0a30a}
+.code{background:#fff;font:13px/20.5px Consolas,"Cascadia Mono",monospace;padding:8px 0;height:316px;color:#000}
+.code div{white-space:pre} .code i{display:inline-block;width:38px;text-align:right;color:#2b91af;font-style:normal;margin-right:14px}
+.kw{color:#0000ff} .fn{color:#ff00ff} .cm{color:#008000}
+.res{flex:1;background:#fff;border-top:4px solid #e6e9ef;display:flex;flex-direction:column}
+.rt{font-size:12px;padding:4px 10px;background:#f5f6f9;border-bottom:1px solid #dde1e8} .rt b{font-weight:600;border-bottom:2px solid #2d3a52;padding-bottom:2px}
+table{border-collapse:collapse;font-size:12.5px;margin:0;width:100%}
+th{background:#f3f4f7;border:1px solid #d7dbe3;font-weight:400;padding:3px 8px;text-align:left}
+td{border:1px solid #e6e9ef;padding:3px 8px;white-space:nowrap} td.n{text-align:right;font-variant-numeric:tabular-nums}
+td.no{background:#f3f4f7;color:#555;text-align:center;width:30px}
+tr:first-child+tr td:not(.no){outline:1px dotted #333;outline-offset:-2px}
+.st{height:24px;background:#f0a30a;color:#1b1b1b;font-size:12px;display:flex;align-items:center;gap:22px;padding:0 10px;margin-top:auto}
+</style></head><body>
+<div class="top"><b>SQL Server Management Studio</b><span>Dosya</span><span>Düzen</span><span>Görünüm</span><span>Sorgu</span><span>Araçlar</span></div>
+<div class="tool"><span class="db">KirakMetal ▾</span><span class="run">▶ Execute</span><span style="color:#666">✓ Parse</span></div>
+<div class="main"><div class="oe"><h4>Object Explorer</h4><div style="padding-left:0px">▾ 🖥 localhost\SQLEXPRESS</div><div style="padding-left:14px">▾ 📁 Databases</div><div style="padding-left:28px">▾ 🗄 KirakMetal</div><div style="padding-left:42px">▾ 📁 Tables</div><div style="padding-left:56px">▦ dbo.Bolge</div><div style="padding-left:56px">▦ dbo.Iade</div><div style="padding-left:56px">▦ dbo.Musteri</div><div style="padding-left:56px">▦ dbo.Satis</div><div style="padding-left:56px">▦ dbo.Takvim</div><div style="padding-left:56px">▦ dbo.Urun</div><div style="padding-left:42px">▸ 📁 Views</div><div style="padding-left:28px">▸ 🗄 MyDatabase</div><div style="padding-left:28px">▸ 🗄 SalesDB</div></div>
+<div class="ed"><div class="tab"><span>Musteri Analizi.sql — localhost\SQLEXPRESS</span></div>
+<div class="code"><div><i>1</i><span class="cm">-- Kırak Metal: en çok ciro getiren 8 müşteri (2024–2026)</span></div><div><i>2</i><span class="kw">USE</span> KirakMetal;</div><div><i>3</i>&nbsp;</div><div><i>4</i><span class="kw">SELECT TOP</span> 8</div><div><i>5</i>    m.Firma, m.Sehir, b.Bolge,</div><div><i>6</i>    <span class="fn">COUNT</span>(<span class="kw">DISTINCT</span> s.SiparisNo)        <span class="kw">AS</span> Siparis,</div><div><i>7</i>    <span class="fn">SUM</span>(s.Adet)                        <span class="kw">AS</span> ToplamAdet,</div><div><i>8</i>    <span class="fn">SUM</span>(s.Adet * u.UrunFiyati)         <span class="kw">AS</span> Ciro</div><div><i>9</i><span class="kw">FROM</span> dbo.Satis <span class="kw">AS</span> s</div><div><i>10</i><span class="kw">JOIN</span> dbo.Musteri <span class="kw">AS</span> m <span class="kw">ON</span> m.MusteriKey = s.MusteriKey</div><div><i>11</i><span class="kw">JOIN</span> dbo.Urun    <span class="kw">AS</span> u <span class="kw">ON</span> u.UrunKey    = s.UrunKey</div><div><i>12</i><span class="kw">JOIN</span> dbo.Bolge   <span class="kw">AS</span> b <span class="kw">ON</span> b.BolgeKey   = s.BolgeKey</div><div><i>13</i><span class="kw">GROUP BY</span> m.MusteriKey, m.Firma, m.Sehir, b.Bolge</div><div><i>14</i><span class="kw">ORDER BY</span> Ciro <span class="kw">DESC</span>;</div></div>
+<div class="res"><div class="rt"><b>▦ Results</b> &nbsp; Messages</div>
+<table><tr><th></th><th>Firma</th><th>Sehir</th><th>Bolge</th><th>Siparis</th><th>ToplamAdet</th><th>Ciro</th></tr><tr><td class="no">1</td><td>Plovdiv Mashini</td><td>Plovdiv</td><td>Bulgaristan</td><td class="n">350</td><td class="n">182.667</td><td class="n">17.952.328,00</td></tr><tr><td class="no">2</td><td>Tekirdağ Gıda Makina</td><td>Aydın</td><td>Ege</td><td class="n">187</td><td class="n">100.221</td><td class="n">10.062.957,00</td></tr><tr><td class="no">3</td><td>Anadolu Pres</td><td>Mersin</td><td>Akdeniz</td><td class="n">129</td><td class="n">60.134</td><td class="n">6.415.339,00</td></tr><tr><td class="no">4</td><td>Akdeniz Sera</td><td>İstanbul</td><td>Marmara</td><td class="n">84</td><td class="n">31.535</td><td class="n">4.422.500,00</td></tr><tr><td class="no">5</td><td>Bursa Yedek Parça</td><td>Manisa</td><td>Ege</td><td class="n">77</td><td class="n">36.630</td><td class="n">4.003.565,00</td></tr><tr><td class="no">6</td><td>Karadeniz Tersane</td><td>Antalya</td><td>Akdeniz</td><td class="n">71</td><td class="n">40.638</td><td class="n">3.490.877,00</td></tr><tr><td class="no">7</td><td>Samsun Tarım</td><td>Trabzon</td><td>Karadeniz</td><td class="n">47</td><td class="n">24.749</td><td class="n">3.048.540,00</td></tr><tr><td class="no">8</td><td>Şanlıurfa Sulama</td><td>Manisa</td><td>Ege</td><td class="n">44</td><td class="n">27.944</td><td class="n">2.911.133,00</td></tr></table>
+<div class="st"><span>✓ Query executed successfully.</span><span style="margin-left:auto">localhost\SQLEXPRESS</span><span>KirakMetal</span><span>00:00:00</span><span>8 rows</span></div></div>
+</div></div></body></html>

@@ -1,9 +1,10 @@
 BEGIN:VCARD
 VERSION:3.0
-N:;Ali Berk;;;
-FN:Ali Berk
+N:Kırak;Ali Berk;;;
+FN:Ali Berk Kırak
 TITLE:İşletme Öğrencisi · Veri Analizi
 EMAIL;TYPE=INTERNET:iletisim@aliberk.cv
 URL:https://aliberk.cv
+X-SOCIALPROFILE;TYPE=github:https://github.com/aliberkkirak
 NOTE:Excel · Power BI · SQL
 END:VCARD
