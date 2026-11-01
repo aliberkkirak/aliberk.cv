@@ -50,9 +50,9 @@
   <!-- Kartvizit: dokununca döner -->
   <section class="sahne" aria-labelledby="ad">
     <div class="kart-kutu">
-      <button class="kart" type="button" id="kart" aria-pressed="false">
+      <div class="kart" id="kart" role="button" tabindex="0" aria-pressed="false">
         <span class="sr"><span data-l="tr">Kartı çevir</span><span data-l="en">Flip the card</span></span>
-        <span class="yuz on-yuz kagit bone" aria-hidden="false">
+        <div class="yuz on-yuz kagit" aria-hidden="false">
           <span class="k-ust-sol">aliberk.cv</span>
           <span class="k-ust-sag"><span data-l="tr">Türkiye</span><span data-l="en">Türkiye</span></span>
           <span class="k-firma">
@@ -63,13 +63,16 @@
             <strong id="ad">Ali Berk Kırak</strong>
             <span><span data-l="tr">İşletme Öğrencisi</span><span data-l="en">Business Student</span></span>
           </span>
-          <span class="k-alt">iletisim@aliberk.cv &nbsp;·&nbsp; github.com/aliberkkirak</span>
-        </span>
-        <span class="yuz arka-yuz kagit bone" aria-hidden="true">
-          <span class="filigran">ABK</span>
+          <span class="k-alt">github.com/aliberkkirak</span>
+        </div>
+        <div class="yuz arka-yuz kagit" aria-hidden="true">
+          <span class="filigran" aria-hidden="true">ABK</span>
+          <span class="a-baslik"><span data-l="tr">İletişim</span><span data-l="en">Contact</span></span>
+          <a class="a-satir" href="mailto:aliberkkrk@gmail.com">aliberkkrk@gmail.com</a>
+          <a class="a-satir" href="tel:+905072074238">+90 507 207 42 38</a>
           <span class="arka-yazi"><span data-l="tr">Dağınık veriden, net karara.</span><span data-l="en">From messy data to clear decisions.</span></span>
-        </span>
-      </button>
+        </div>
+      </div>
     </div>
     <p class="stok"><span data-l="tr">Soluk bulut beyazı · kabartma harf</span><span data-l="en">Pale nimbus white · raised lettering</span></p>
     <p class="ipucu"><span data-l="tr">Çevirmek için karta dokun</span><span data-l="en">Tap the card to flip it</span></p>
@@ -86,7 +89,7 @@
       <li class="status"><i aria-hidden="true"></i><span data-l="tr">Staj fırsatlarına açık</span><span data-l="en">Open to internships</span></li>
     </ul>
     <nav class="actions" aria-label="İletişim">
-      <a class="btn primary" href="mailto:iletisim@aliberk.cv">
+      <a class="btn primary" href="mailto:aliberkkrk@gmail.com">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
         <span data-l="tr">E-posta</span><span data-l="en">Email</span>
       </a>

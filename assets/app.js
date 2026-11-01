@@ -140,11 +140,15 @@
   /* Kartvizit: dokununca döner, eğilince ışık kayar */
   var kart = $("#kart"), kutu = $(".kart-kutu");
   if (kart) {
-    kart.addEventListener("click", function () {
+    var cevir = function () {
       var acik = kart.getAttribute("aria-pressed") === "true";
       kart.setAttribute("aria-pressed", String(!acik));
       $(".on-yuz").setAttribute("aria-hidden", String(!acik));
       $(".arka-yuz").setAttribute("aria-hidden", String(acik));
+    };
+    kart.addEventListener("click", function (e) { if (!e.target.closest("a")) cevir(); });
+    kart.addEventListener("keydown", function (e) {
+      if ((e.key === "Enter" || e.key === " ") && !e.target.closest("a")) { e.preventDefault(); cevir(); }
     });
     var egil = function (x, y) { // x, y: -1..1
       kutu.style.setProperty("--ry", (x * 9).toFixed(2) + "deg");

@@ -334,7 +334,7 @@ html:not(.js) .bar span, .in .bar span { transform: scaleX(1); }
   content: ""; position: absolute; inset: 0; border-radius: 3px; transform: translateZ(-30px) rotate(-4deg) translate(-2%, 4%);
   background: #dcdfda; box-shadow: var(--golge); opacity: .85;
 }
-.kart { filter: drop-shadow(0 24px 30px rgba(0, 0, 0, .55)); }
+.yuz { box-shadow: 0 2px 3px rgba(0, 0, 0, .3), 0 22px 34px -10px rgba(0, 0, 0, .6); }
 .stok { font-size: 15.5px; color: rgba(228, 221, 205, .78); margin-top: 22px; }
 .ipucu { font-size: 12px; font-weight: 600; color: rgba(228, 221, 205, .55); }
 
@@ -379,3 +379,19 @@ p { color: var(--ink2); }
 .mono { font-size: 15px; font-weight: 600; }
 .lang button { font-size: 14px; font-weight: 600; }
 .lang button:not([aria-pressed="true"]) { color: rgba(228, 221, 205, .75); }
+/* Kartın arka yüzü: iletişim */
+.kart { -webkit-user-select: none; user-select: none; }
+.kart:focus-visible { outline: none; }
+.kart:focus-visible .yuz { outline: 1.5px solid #c9bfa8; outline-offset: 4px; }
+.arka-yuz { gap: 4px; padding: 0 8%; }
+.arka-yuz .filigran { position: absolute; inset: 0; display: grid; place-items: center; font-size: clamp(90px, 30vw, 150px); color: rgba(29, 26, 23, .06); pointer-events: none; }
+.a-baslik { position: relative; font: 600 clamp(12px, 3.3vw, 14px) var(--serif-caps); letter-spacing: .3em; padding-left: .3em; color: var(--ink2); margin-bottom: 4px; }
+.a-satir {
+  position: relative; display: inline-block; padding: 3px 8px; text-decoration: none; text-transform: none;
+  font: 500 clamp(16px, 4.7vw, 21px) var(--serif); letter-spacing: .03em; color: var(--ink);
+  border-bottom: 1px solid transparent; transition: border-color .2s;
+}
+.a-satir[href^="tel"] { font: 600 clamp(15px, 4.4vw, 20px) var(--serif-caps); letter-spacing: .12em; font-variant-numeric: lining-nums; }
+@media (hover: hover) { .a-satir:hover { border-bottom-color: rgba(29, 26, 23, .4); } }
+.arka-yuz .arka-yazi { position: relative; margin-top: 8px; font-size: clamp(13px, 3.7vw, 16px); color: var(--ink2); }
+.arka-yuz .filigran { color: rgba(29, 26, 23, .045); text-shadow: 0 1px 0 rgba(255, 255, 255, .45); }
