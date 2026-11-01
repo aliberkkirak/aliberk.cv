@@ -395,3 +395,23 @@ p { color: var(--ink2); }
 @media (hover: hover) { .a-satir:hover { border-bottom-color: rgba(29, 26, 23, .4); } }
 .arka-yuz .arka-yazi { position: relative; margin-top: 8px; font-size: clamp(13px, 3.7vw, 16px); color: var(--ink2); }
 .arka-yuz .filigran { color: rgba(29, 26, 23, .045); text-shadow: 0 1px 0 rgba(255, 255, 255, .45); }
+
+/* Deneyim */
+.is-ust { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.is-ust strong { font: 600 21px var(--serif-caps); letter-spacing: .1em; color: var(--ink); text-shadow: 0 1px 0 rgba(255, 255, 255, .7); }
+.is-ust time { font: 600 13.5px var(--serif-caps); letter-spacing: .12em; color: var(--ink2); }
+.is-unvan { margin-top: 2px; font: italic 500 17px var(--serif); color: var(--ink); }
+.is-hikaye { margin-top: 10px; font-size: 16.5px; line-height: 1.55; padding-left: 14px; border-left: 2px solid rgba(29, 26, 23, .35); color: var(--ink); }
+.alanlar { margin: 16px 0 0; display: grid; gap: 12px; }
+.alanlar div { display: grid; gap: 1px; }
+.alanlar dt { font: 600 13px var(--serif-caps); letter-spacing: .2em; text-transform: uppercase; color: var(--ink2); }
+.alanlar dd { margin: 0; font-size: 16px; color: var(--ink); }
+
+/* Sertifikalar */
+.sertifika { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+.sertifika li { display: grid; gap: 2px; padding-bottom: 14px; border-bottom: 1px solid var(--hair); }
+.sertifika li:last-child { border-bottom: 0; padding-bottom: 0; }
+.sertifika strong { font-weight: 500; font-size: 17.5px; line-height: 1.35; color: var(--ink); }
+.durum { justify-self: start; margin-top: 4px; font: 600 12px var(--serif-caps); font-style: normal; letter-spacing: .18em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
+.durum.devam { color: var(--bone); background: var(--ink); }
+.durum.hedef { color: var(--ink2); border: 1px dashed rgba(29, 26, 23, .45); }
