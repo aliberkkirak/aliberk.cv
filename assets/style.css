@@ -404,3 +404,66 @@ p { color: var(--ink2); }
 @keyframes ipucu { 50% { border-color: rgba(228, 221, 205, .7); background: rgba(228, 221, 205, .12); } }
 @keyframes don-ok { 0%, 40% { transform: rotate(0); } 70%, 100% { transform: rotate(180deg); } }
 .ipucu { white-space: nowrap; font-size: clamp(11.5px, 3.4vw, 13.5px); letter-spacing: clamp(.12em, .6vw, .22em); cursor: pointer; }
+
+/* ---------- Altın vurgular (2026-11-12) ---------- */
+:root {
+  --altin-koyu: #6e4512; --altin: #a8741f; --altin-acik: #e3b54a; --altin-parlak: #f6dc8a;
+  --altin-yaldiz: linear-gradient(100deg, var(--altin-koyu) 0%, var(--altin) 22%, var(--altin-acik) 42%, var(--altin-parlak) 50%, var(--altin-acik) 58%, var(--altin) 78%, var(--altin-koyu) 100%);
+}
+@keyframes yaldiz { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@keyframes yildiz { 0%, 100% { opacity: .55; transform: scale(.8) rotate(0); } 50% { opacity: 1; transform: scale(1.15) rotate(45deg); } }
+
+/* Başlıklar: yaldızlı yazı, iki yanda yıldız */
+.kagit h2.altin, h2.altin > span { text-shadow: none; }
+h2.altin > span {
+  background: linear-gradient(100deg, #5c3a0e 0%, #8a5a16 25%, #b8801f 45%, #d09a2c 50%, #b8801f 55%, #8a5a16 75%, #5c3a0e 100%); background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  animation: yaldiz 5s linear infinite; font-weight: 700;
+  filter: drop-shadow(0 1px 0 rgba(255, 255, 255, .5));
+}
+h2.altin::before, h2.altin::after {
+  content: "✦"; width: auto; height: auto; background: none; color: var(--altin); font-size: 14px; letter-spacing: 0;
+  text-shadow: 0 0 6px rgba(227, 181, 74, .55); animation: yildiz 2.6s ease-in-out infinite;
+}
+h2.altin::after { animation-delay: 1.3s; }
+
+/* Düğmeler: altın zemin, parıltı geçişi */
+.btn.altin-btn {
+  position: relative; overflow: hidden; color: #2a1a06; border: 1px solid var(--altin-koyu);
+  background: linear-gradient(160deg, var(--altin-parlak) 0%, var(--altin-acik) 35%, var(--altin) 75%, var(--altin-koyu) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 246, 214, .8), 0 6px 16px -8px rgba(110, 69, 18, .8);
+  text-shadow: 0 1px 0 rgba(255, 240, 200, .5);
+}
+.btn.altin-btn::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .65), transparent); transform: skewX(-20deg);
+  animation: parilti 3.6s ease-in-out infinite;
+}
+@keyframes parilti { 0%, 55% { left: -60%; } 100% { left: 130%; } }
+.btn.altin-btn::before {
+  content: "✦"; position: absolute; top: 4px; right: 8px; font-size: 10px; color: #fff6d6; animation: yildiz 2.2s ease-in-out infinite;
+}
+.btn.genis { grid-column: 1 / -1; }
+@media (hover: hover) { .btn.altin-btn:hover { border-color: var(--altin-koyu); filter: brightness(1.06); } .btn.primary.altin-btn:hover { background: linear-gradient(160deg, var(--altin-parlak) 0%, var(--altin-acik) 35%, var(--altin) 75%, var(--altin-koyu) 100%); } }
+
+/* Çevirme ipucu: koyu masada altın */
+.ipucu.altin-ipucu {
+  color: var(--altin-parlak); border-color: rgba(227, 181, 74, .55);
+  background: rgba(227, 181, 74, .08); text-shadow: 0 0 10px rgba(227, 181, 74, .45);
+  animation: ipucu-altin 2.8s ease-in-out infinite; position: relative;
+}
+.ipucu.altin-ipucu svg { color: var(--altin-acik); }
+.ipucu.altin-ipucu::before, .ipucu.altin-ipucu::after {
+  content: "✦"; position: absolute; font-size: 11px; color: var(--altin-parlak); animation: yildiz 2.4s ease-in-out infinite;
+}
+.ipucu.altin-ipucu::before { top: -7px; left: 10px; }
+.ipucu.altin-ipucu::after { bottom: -7px; right: 12px; animation-delay: 1.2s; }
+@keyframes ipucu-altin { 50% { border-color: rgba(246, 220, 138, .95); background: rgba(227, 181, 74, .16); box-shadow: 0 0 18px -4px rgba(227, 181, 74, .55); } }
+
+@media (prefers-reduced-motion: reduce) {
+  h2.altin > span { background-position: 50% 0; }
+  .btn.altin-btn::after { display: none; }
+}
+@media print {
+  h2.altin > span { -webkit-text-fill-color: var(--altin-koyu); color: var(--altin-koyu); background: none; }
+}
