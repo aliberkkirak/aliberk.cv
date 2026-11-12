@@ -70,7 +70,7 @@ html.swap main { opacity: 0; }
 .kagit.ivory { background-color: var(--ivory); }
 .kagit.nimbus { background-color: var(--nimbus); }
 /* Kabartma harf */
-.kagit h2, .k-firma, .k-kisi, .stat strong, .project h3, .road li b, .filigran {
+.kagit h2, .k-firma, .k-kisi, .stat strong, .project h3, .filigran {
   text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0 -.5px 0 rgba(0, 0, 0, .18);
 }
 
@@ -219,24 +219,6 @@ p { margin: 0; color: var(--ink2); }
   .dots { display: none; }
 }
 
-/* ---------- Yol haritası ---------- */
-.road { list-style: none; margin: 0; padding: 0 0 0 30px; position: relative; display: grid; gap: 14px; }
-.road::before { content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 1px; background: var(--hair); }
-.road::after { content: ""; position: absolute; left: 8.5px; top: 8px; width: 2px; height: 0; background: var(--ink); transition: height 1.6s var(--ease) .2s; }
-.in .road::after, html:not(.js) .road::after { height: 46%; }
-.road li { position: relative; display: grid; gap: 0; font-size: 16px; color: var(--ink2); }
-.road li b { font: 500 12px var(--serif-caps); letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
-.road li::before { content: ""; position: absolute; left: -27px; top: 4px; width: 13px; height: 13px; border-radius: 50%; background: var(--nimbus); border: 1px solid rgba(43, 39, 35, .35); }
-.road li.done { color: var(--ink); }
-.road li.done::before { background: var(--ink); border-color: var(--ink); }
-.road li.done::after { content: ""; position: absolute; left: -23.5px; top: 8px; width: 6px; height: 3px; border: solid var(--nimbus); border-width: 0 0 1.5px 1.5px; transform: rotate(-45deg); }
-.road li.now { color: var(--ink); font-weight: 500; }
-.road li.now::before { border: 1.5px solid var(--ink); box-shadow: 0 0 0 4px rgba(43, 39, 35, .1); animation: simdi 2.4s ease-in-out infinite; }
-@keyframes simdi { 50% { box-shadow: 0 0 0 7px rgba(43, 39, 35, .04); } }
-.road li em { position: absolute; right: 0; top: 1px; font: italic 13px var(--serif); color: var(--ink2); }
-.road li.goal::before { content: "✦"; display: grid; place-items: center; font-size: 10px; color: var(--bone); background: var(--ink); border-color: var(--ink); width: 17px; height: 17px; left: -29px; top: 3px; }
-.road li.goal { font: 500 19px var(--serif-caps); letter-spacing: .08em; color: var(--ink); }
-
 /* ---------- Yetkinlikler ---------- */
 .skills { display: grid; gap: 16px; }
 .skill-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
@@ -299,7 +281,6 @@ html:not(.js) .bar span, .in .bar span { transform: scaleX(1); }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .js .r { opacity: 1; transform: none; }
   .bar span { transform: none; }
-  .road::after { height: 46%; }
   html { scroll-behavior: auto; }
 }
 @media print {
@@ -363,10 +344,6 @@ p { color: var(--ink2); }
 .project p { font-size: 16px; color: var(--ink2); }
 .uses li { font-size: 15px; color: var(--ink2); }
 .note { font-size: 14.5px; color: var(--ink2); }
-.road li { font-size: 17px; }
-.road li b { font-size: 13px; font-weight: 600; color: var(--ink2); }
-.road li em { font-size: 14.5px; color: var(--ink); font-weight: 500; }
-.road li.goal { font-size: 21px; font-weight: 600; }
 .skill-top strong { font-size: 18.5px; font-weight: 600; }
 .skill-top em { font-size: 15px; color: var(--ink2); }
 .skill p { font-size: 16px; }
